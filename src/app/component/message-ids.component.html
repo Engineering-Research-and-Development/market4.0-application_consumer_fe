@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-6 align-self-center">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>text</th>
+              </tr>
+            </thead>
+        <tbody>
+            <tr *ngFor="let message of messages">
+                <td>{{message.id}}</td>
+                <td>{{message.text}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+  </div>
+</div>
