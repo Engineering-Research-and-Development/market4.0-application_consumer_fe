@@ -9,7 +9,7 @@
               </tr>
             </thead>
         <tbody>
-            <tr *ngFor="let message of messages">
+            <tr *ngFor="let message of messages.slice().reverse()">
                 <td>{{message.id}}</td>
                 <td>{{message.text}}</td>
             </tr>
