@@ -11,6 +11,8 @@ export class MessageIdsComponent implements OnInit {
 
   interval: any;
   messages: MessageIds[];
+  consumerStarted: boolean = false;
+  buttonConsumerStartedDisabled = false;
 
   constructor(
     private httpClientService: HttpClientService
@@ -18,13 +20,27 @@ export class MessageIdsComponent implements OnInit {
 
   ngOnInit() {
     this.interval = setInterval(() => {
-      this.httpClientService.getMessages().subscribe(
-      response =>{
-        this.messages = response;
-        }
-      )
+      if(this.consumerStarted){
+        this.httpClientService.getMessages().subscribe(
+        response =>{        
+          this.messages = response;
+          }
+        )
+      }
       }, 500
     );
   }
 
+  onStartConcumer() {
+      this.buttonConsumerStartedDisabled = true;
+      this.httpClientService.getStartConsumer().subscribe(
+      response =>{
+          let obj = JSON.parse(JSON.stringify(response));    
+          this.consumerStarted = obj.consumerStarted; 
+          if(this.consumerStarted==false){
+            this.buttonConsumerStartedDisabled = false;
+          }
+        }
+      );
+    }
 }
