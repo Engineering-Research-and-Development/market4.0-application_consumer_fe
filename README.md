@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# How to install and run #
+1. Open the link (Setting up the Local Environment and Workspace for the Angular):
+     https://angular.io/guide/setup-local
+2. Install the NodeJS:
+      https://nodejs.org/en/
+3. Install the Angular CLI:
+      Run this in the terminal/console:
+           npm install -g @angular/cli
+4. Go to the downloaded path where is app market4.0-application_consumer_fe in the terminal/console and run the commands:
+	npm install
+	ng serve
+5. Frontend app is running on the url: http://localhost:4200/
